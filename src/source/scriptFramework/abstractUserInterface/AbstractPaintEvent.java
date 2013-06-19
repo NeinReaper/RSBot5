@@ -23,11 +23,8 @@ public abstract class AbstractPaintEvent extends Event{
 	}
 	
 	private Graphics getG(){
-		Event controller = this;
-		while(!(controller instanceof AbstractPaintController)){
-			controller = controller.getContainer();
-		}
-		return ((AbstractPaintController)controller).getGraphics();
+		AbstractPaintController controller = (AbstractPaintController)getMasterContainer();
+		return controller != null ? controller.getGraphics() : null;
 	}
 	
 	public Graphics getGraphics(){
