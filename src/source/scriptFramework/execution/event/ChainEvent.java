@@ -1,17 +1,17 @@
 package source.scriptFramework.execution.event;
 
 public abstract class ChainEvent extends Event {
-	private ChainEvent next;
-	public ChainEvent(Event container, ChainEvent next){
+	private Event next;
+	public ChainEvent(Event container, Event next){
 		super(container);
 		this.next = next;
 	}
 	
-	public void setNext(ChainEvent next){
+	public void setNext(Event next){
 		this.next = next;
 	}
 	
-	public ChainEvent getNext(){
+	public Event getNext(){
 		return next;
 	}
 	
@@ -19,7 +19,7 @@ public abstract class ChainEvent extends Event {
 	public void cycle(){
 		chain();
 		if(next.accept()){
-			next.chain();
+			next.execute();
 		}
 	}
 	

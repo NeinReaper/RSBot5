@@ -1,10 +1,5 @@
 package source.util;
-
 import org.powerbot.script.AbstractScript;
-import org.powerbot.script.lang.LocatableIdNameQuery;
-import org.powerbot.script.methods.MethodContext;
-import org.powerbot.script.methods.Npcs;
-import org.powerbot.script.methods.Widgets;
 import org.powerbot.script.wrappers.Npc;
 import org.powerbot.script.wrappers.Widget;
 

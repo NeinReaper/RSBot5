@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import org.powerbot.event.PaintListener;
 import org.powerbot.script.Manifest;
 import org.powerbot.script.PollingScript;
+import org.powerbot.script.util.Random;
 import org.powerbot.script.wrappers.Component;
 
 import source.scriptFramework.execution.event.ControlEvent;
@@ -48,7 +49,7 @@ public class WidgetViewer extends PollingScript implements PaintListener{
 		} else {
 			startUp();
 		}
-		return DEFAULT_DELAY;
+		return Random.nextInt(550, 650);
 	}
 	
 	public void setChildToDraw(Component childToDraw){
